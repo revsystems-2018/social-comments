@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.dharbor.set</groupId>
+    <artifactId>social.comments.parent</artifactId>
+    <version>1.0.0</version>
+    <packaging>pom</packaging>
+    <name>Comments Parent Project</name>
+
+    <properties>
+        <!-- Project encoding -->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+        <!-- SET Nexus server address for snapshots-->
+        <set-nexus.snapshots.url>
+            https://set-nexus.digitalharbor.us:8443/repository/maven-snapshots/
+        </set-nexus.snapshots.url>
+
+        <!-- SET Nexus server address for releases-->
+        <set-nexus.releases.url>
+            https://set-nexus.digitalharbor.us:8443/repository/maven-releases/
+        </set-nexus.releases.url>
+
+        <!-- Main project artifacts -->
+        <set.comments.bom.version>1.0.0</set.comments.bom.version>
+
+    </properties>
+
+    <!-- SET repositories -->
+    <repositories>
+        <repository>
+            <id>set-nexus-snapshots</id>
+            <url>${set-nexus.snapshots.url}</url>
+        </repository>
+        <repository>
+            <id>set-nexus-releases</id>
+            <url>${set-nexus.releases.url}</url>
+        </repository>
+        <repository>
+            <id>jitpack.io</id>
+            <url>https://jitpack.io</url>
+        </repository>
+    </repositories>
+
+    <distributionManagement>
+        <!-- Publish the versioned snapshot here -->
+        <snapshotRepository>
+            <id>set-nexus</id>
+            <name>set - nexus</name>
+            <url>${set-nexus.snapshots.url}</url>
+        </snapshotRepository>
+
+        <!-- Publish the versioned releases here -->
+        <repository>
+            <id>set-nexus</id>
+            <name>set - nexus</name>
+            <url>${set-nexus.releases.url}</url>
+        </repository>
+    </distributionManagement>
+
+</project>

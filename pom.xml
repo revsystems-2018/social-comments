@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.dharbor.set</groupId>
+        <artifactId>social.comments.parent</artifactId>
+        <version>1.0.0</version>
+        <relativePath>comments-parent/pom.xml</relativePath>
+    </parent>
+
+    <artifactId>social.comments</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0.0</version>
+    <name>Social Comments Project</name>
+    <description>SET Social Comments project</description>
+
+    <modules>
+        <module>comments-parent</module>
+        <module>comments-bom</module>
+        <module>comments-modules</module>
+        <module>comments-api</module>
+        <module>comments-client</module>
+        <module>comments-service</module>
+    </modules>
+</project>
