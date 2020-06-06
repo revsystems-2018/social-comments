@@ -1,0 +1,234 @@
+{
+  "name": "comments-persistence",
+  "dataStoreType": "RELATIONAL",
+  "version": "0.0.2",
+  "entities": [
+    {
+      "name": "Explanation",
+      "attributes": [
+        {
+          "name": "id",
+          "type": "LONG",
+          "required": true
+        },
+        {
+          "name": "resourceId",
+          "type": "STRING",
+          "required": true
+        },
+        {
+          "name": "indicator",
+          "type": "LONG",
+          "required": false,
+          "defaultValue": "0"
+        }
+      ],
+      "primaryKey": {
+        "attribute": "id",
+        "type": "SYSTEM_GENERATED"
+      },
+      "customQueries": [
+        {
+          "query": "findByResourceId",
+          "returnType": "COLLECTION",
+          "pagination": false
+        }
+      ]
+    },
+    {
+      "name": "Message",
+      "softDelete": true,
+      "attributes": [
+        {
+          "name": "id",
+          "type": "LONG",
+          "required": true
+        },
+        {
+          "name": "userId",
+          "type": "STRING",
+          "required": true
+        },
+        {
+          "name": "createdDate",
+          "type": "DATETIME",
+          "auto-generate-on-create": true,
+          "columnDefinition": "DATETIME(6)",
+          "required": true
+        },
+        {
+          "name": "updatedDate",
+          "type": "DATETIME",
+          "auto-generate-on-update": true,
+          "columnDefinition": "DATETIME(6)",
+          "required": true
+        },
+        {
+          "name": "contentType",
+          "type": "ENUM",
+          "enumType": "ContentType",
+          "required": true
+        },
+        {
+          "name": "deleted",
+          "type": "BOOLEAN",
+          "required": false,
+          "defaultValue": false
+        },
+        {
+          "name": "edited",
+          "type": "BOOLEAN",
+          "required": false
+        },
+        {
+          "name": "color",
+          "type": "ENUM",
+          "required": false,
+          "enumType": "Color"
+        },
+        {
+          "name": "font",
+          "type": "ENUM",
+          "required": false,
+          "enumType": "Font"
+        },
+        {
+          "name": "explanation",
+          "type": "REFERENCE",
+          "required": true,
+          "referenceInfo": {
+            "relationshipType": "ManyToOne",
+            "type": "Explanation",
+            "fetch": "EAGER",
+            "cascade": [
+              "MERGE",
+              "REMOVE"
+            ],
+            "exported": false,
+            "optional": true
+          }
+        }
+      ],
+      "primaryKey": {
+        "attribute": "id",
+        "type": "SYSTEM_GENERATED"
+      },
+      "customQueries": [
+        {
+          "query": "findByExplanationIdAndCreatedDateLessThanOrderByCreatedDateDesc",
+          "aliasName": "findByExplanationBeforeDate",
+          "returnType": "COLLECTION",
+          "pagination": true
+        }
+      ]
+    },
+    {
+      "name": "TextContent",
+      "attributes": [
+        {
+          "name": "id",
+          "type": "LONG",
+          "required": true
+        },
+        {
+          "name": "value",
+          "type": "STRING",
+          "length": 10000,
+          "required": true
+        },
+        {
+          "name": "message",
+          "type": "REFERENCE",
+          "required": true,
+          "referenceInfo": {
+            "relationshipType": "OneToOne",
+            "type": "Message",
+            "fetch": "EAGER",
+            "cascade": [
+              "MERGE",
+              "REFRESH"
+            ],
+            "exported": false,
+            "optional": true
+          }
+        }
+      ],
+      "primaryKey": {
+        "attribute": "id",
+        "type": "SYSTEM_GENERATED"
+      },
+      "customQueries": [
+        {
+          "query": "findByMessageId",
+          "returnType": "COLLECTION",
+          "pagination": false
+        }
+      ]
+    },
+    {
+      "name": "ResourceExplanationRegistry",
+      "attributes": [
+        {
+          "name": "id",
+          "type": "LONG",
+          "required": true
+        },
+        {
+          "name": "resourceId",
+          "type": "STRING",
+          "required": true
+        },
+        {
+          "name": "resourceName",
+          "type": "STRING",
+          "required": true
+        },
+        {
+          "name": "resourceValue",
+          "type": "STRING",
+          "required": true
+        }
+      ],
+      "primaryKey": {
+        "attribute": "id",
+        "type": "SYSTEM_GENERATED"
+      },
+      "customQueries": [
+        {
+          "query": "findByResourceId",
+          "returnType": "COLLECTION",
+          "pagination": false
+        }
+      ]
+    }
+  ],
+  "enums": [
+    {
+      "name": "ContentType",
+      "values": [
+        "TEXT"
+      ]
+    },
+    {
+      "name": "Color",
+      "values": [
+        "COLOR_1",
+        "COLOR_2",
+        "COLOR_3",
+        "COLOR_4",
+        "COLOR_5"
+      ]
+    },
+    {
+      "name": "Font",
+      "values": [
+        "FONT_1",
+        "FONT_2",
+        "FONT_3",
+        "FONT_4",
+        "FONT_5",
+        "FONT_6"
+      ]
+    }
+  ]
+}

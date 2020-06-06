@@ -1,0 +1,16 @@
+com\dharbor\set\social\comments\data\domain\User.class
+com\dharbor\set\social\comments\data\enums\UserStatus.class
+com\dharbor\set\social\comments\data\api\dto\UpdateExplanationDTO.class
+com\dharbor\set\social\comments\data\enums\Color.class
+com\dharbor\set\social\comments\data\api\exception\ResourceKey.class
+com\dharbor\set\social\comments\data\domain\Message.class
+com\dharbor\set\social\comments\data\enums\ContentType.class
+com\dharbor\set\social\comments\data\domain\Pagination.class
+com\dharbor\set\social\comments\data\domain\Explanation.class
+com\dharbor\set\social\comments\data\api\input\UpdateExplanationMessageInput.class
+com\dharbor\set\social\comments\data\api\dto\ResourceExplanationRegistryDTO.class
+com\dharbor\set\social\comments\data\api\dto\UpdateMessageDTO.class
+com\dharbor\set\social\comments\data\enums\Font.class
+com\dharbor\set\social\comments\data\api\dto\CreateMessageDTO.class
+com\dharbor\set\social\comments\data\api\dto\ExplanationDTO.class
+com\dharbor\set\social\comments\data\domain\ResourceExplanationRegistry.class

@@ -1,0 +1,16 @@
+D:\SET\social-comments\comments-api\src\main\java\com\dharbor\set\social\comments\data\domain\Pagination.java
+D:\SET\social-comments\comments-api\src\main\java\com\dharbor\set\social\comments\data\enums\Font.java
+D:\SET\social-comments\comments-api\src\main\java\com\dharbor\set\social\comments\data\api\dto\CreateMessageDTO.java
+D:\SET\social-comments\comments-api\src\main\java\com\dharbor\set\social\comments\data\domain\ResourceExplanationRegistry.java
+D:\SET\social-comments\comments-api\src\main\java\com\dharbor\set\social\comments\data\api\dto\ExplanationDTO.java
+D:\SET\social-comments\comments-api\src\main\java\com\dharbor\set\social\comments\data\api\exception\ResourceKey.java
+D:\SET\social-comments\comments-api\src\main\java\com\dharbor\set\social\comments\data\api\input\UpdateExplanationMessageInput.java
+D:\SET\social-comments\comments-api\src\main\java\com\dharbor\set\social\comments\data\api\dto\UpdateExplanationDTO.java
+D:\SET\social-comments\comments-api\src\main\java\com\dharbor\set\social\comments\data\enums\UserStatus.java
+D:\SET\social-comments\comments-api\src\main\java\com\dharbor\set\social\comments\data\api\dto\ResourceExplanationRegistryDTO.java
+D:\SET\social-comments\comments-api\src\main\java\com\dharbor\set\social\comments\data\api\dto\UpdateMessageDTO.java
+D:\SET\social-comments\comments-api\src\main\java\com\dharbor\set\social\comments\data\enums\Color.java
+D:\SET\social-comments\comments-api\src\main\java\com\dharbor\set\social\comments\data\domain\Message.java
+D:\SET\social-comments\comments-api\src\main\java\com\dharbor\set\social\comments\data\domain\User.java
+D:\SET\social-comments\comments-api\src\main\java\com\dharbor\set\social\comments\data\enums\ContentType.java
+D:\SET\social-comments\comments-api\src\main\java\com\dharbor\set\social\comments\data\domain\Explanation.java
